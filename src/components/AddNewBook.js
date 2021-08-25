@@ -6,6 +6,13 @@ import { newBook } from '../redux/books/books';
 const AddNewBook = () => {
 
   const dispatch = useDispatch();
+  const options = ['Fantasy', 'Dystopian', 'Philosophy', 'Mystery','Thriller',
+                    'History', 'Action', 'ScienceFiction','Economy'];
+  const jsxOptions = options.map(o => {
+    return (
+      <option>{o}</option>
+    );
+  })
 
   return (
     <div className="newBookWrapper">
@@ -20,15 +27,7 @@ const AddNewBook = () => {
          }}>
         <input type="text" className="newBookTitile" placeholder="Book titile" required></input>
         <select className="newBookCategory" required>
-          <option>Fantasy</option>
-          <option>Dystopian</option>
-          <option>Philosophy</option>
-          <option>Mystery</option>
-          <option>Thriller</option>
-          <option>History</option>
-          <option>Action</option>
-          <option>ScienceFiction</option>
-          <option>Economy</option>
+          {jsxOptions}
         </select>
 
         <button type="submit" className="submitBtn">Add book</button>
