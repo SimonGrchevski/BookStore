@@ -1,0 +1,82 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a,
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.flex {
+  display: flex;
+}
+
+#root {
+  background-color: rgba(128, 128, 128, 0.59);
+  height: 100vh;
+}
+
+/*
+  More of a global  styles. Should change them in globals.css later on
+*/
+
+.bookWrapper {
+  padding: 10px 20px;
+  width: 90%;
+  background-color: #f7f7f7f7;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.ulBooks > li {
+  margin: 15px 0;
+}
+
+.bookInfoWrapper {
+  flex-grow: 2;
+  max-width: 45%;
+}
+
+.bookTitle,
+.currentChapter {
+  word-break: break-word;
+}
+
+.currentChapterWrapper,
+.completionWrapper {
+  flex-grow: 1;
+}
+
+.completionWrapper {
+  align-items: center;
+}
+
+.completeImageDiv {
+  padding: 0 10px;
+}
+
+.currentChapterWrapper > * {
+  display: block;
+  padding: 2px 0;
+}
+
+.currentChapterWrapper {
+  max-width: 25%;
+}
+
+.optionsUl > li {
+  padding-right: 5px;
+}
+
+.progress {
+  background: url(../progressCircle.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+}
