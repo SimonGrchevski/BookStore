@@ -6,7 +6,6 @@ const Completion = (props) => {
   return (
     <article className="completionWrapper flex">
       <div className="completeImageDiv">
-        {/* <img alt="Completion" /> */}
         <div className="progress" />
       </div>
       <div>

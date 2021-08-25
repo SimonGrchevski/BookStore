@@ -3,7 +3,6 @@ import Proptypes from 'prop-types';
 
 const CurrentChapter = (props) => {
   const { chapter } = props;
-  console.log(chapter);
   return (
     <article className="currentChapterWrapper">
       <p>CurrentChapter</p>
