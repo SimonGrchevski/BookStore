@@ -8,12 +8,14 @@ import './book.css';
 const Book = (props) => {
   const {
     title, category, completed, chapter,
+    id,
   } = props;
   return (
     <section className="bookWrapper flex">
       <BookInfo
         title={title}
         category={category}
+        id={id}
       />
       <Completion completed={completed} />
       <CurrentChapter chapter={chapter} />
@@ -26,5 +28,6 @@ Book.propTypes = {
   category: PropTypes.string.isRequired,
   completed: PropTypes.number.isRequired,
   chapter: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 export default Book;
