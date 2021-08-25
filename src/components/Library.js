@@ -9,6 +9,7 @@ const Library = () => {
     <li key={e.id}>
       <Book
         title={e.title}
+        author={e.author}
         category={e.category}
         completed={e.completed}
         chapter={e.chapter}

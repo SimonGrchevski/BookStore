@@ -5,13 +5,15 @@ import { eraseBook } from '../redux/books/books';
 
 const BookInfo = (props) => {
   const dispatch = useDispatch();
-  const { title, category, id } = props;
+  const {
+    title, author, category, id,
+  } = props;
   return (
     <article className="bookInfoWrapper">
       <div className="bookInfo">
         <h5 className="bookCategory">{category}</h5>
         <h3 className="bookTitle">{title}</h3>
-        <h5 className="bookAuthor">BookAuthor</h5>
+        <h5 className="bookAuthor">{author}</h5>
       </div>
       <div className="optionsSection">
         <ul className="flex optionsUl">
@@ -26,6 +28,7 @@ const BookInfo = (props) => {
 
 BookInfo.propTypes = {
   title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
 };

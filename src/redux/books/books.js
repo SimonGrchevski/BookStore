@@ -15,12 +15,13 @@ const bookReducer = (state = initialState, action) => {
   }
 };
 
-export function newBook(title, category) {
+export function newBook(title, author, category) {
   return (dispatch) => {
     dispatch({
       type: addBook,
       payload: {
         title,
+        author,
         category,
         completed: 0,
         chapter: 'Introduction',
