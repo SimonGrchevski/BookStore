@@ -4,12 +4,15 @@ import Completion from './Completion';
 import CurrentChapter from './CurrentChapter';
 import './book.css';
 
-const Book = () => {
+const Book = (props) => {
+  const {title,category,completed,chapter} = props;
   return (
     <section className="bookWrapper flex">
-      <BookInfo />
-      <Completion />
-      <CurrentChapter />
+      <BookInfo 
+      title={title}
+      category={category} />
+      <Completion completed={completed}/>
+      <CurrentChapter chapter={chapter}/>
     </section>
   )
 }

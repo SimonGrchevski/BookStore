@@ -1,11 +1,12 @@
 import React from 'react';
 
-const BookInfo = () => {
+const BookInfo = (props) => {
+  const {title, category} = props;
   return (
     <article className="bookInfoWrapper">
       <div className="bookInfo">
-        <h5 className="bookCategory">Book Category</h5>
-        <h3 className="bookTitle">Book Title</h3>
+        <h5 className="bookCategory">{category}</h5>
+        <h3 className="bookTitle">{title}</h3>
         <h5 className="bookAuthor">BookAuthor</h5>
       </div>
       <div className="optionsSection">

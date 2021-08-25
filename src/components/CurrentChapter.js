@@ -1,10 +1,11 @@
 import React from 'react';
 
-const CurrentChapter = () => {
+const CurrentChapter = (props) => {
+  const {currentChapter} = props
   return (
     <article className="currentChapterWrapper">
       <p>CurrentChapter</p>
-      <span className="currentChapter">Chapter 17</span>
+      <span className="currentChapter">{currentChapter}</span>
       <button type="button" className="updateProgress">UpdateProgress</button>
     </article>
   );

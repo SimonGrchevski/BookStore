@@ -15,6 +15,11 @@ li {
   display: flex;
 }
 
+#root {
+  background-color: rgba(128, 128, 128, 0.59);
+  height: 100vh;
+}
+
 /*
   More of a global  styles. Should change them in globals.css later on
 */
@@ -29,6 +34,11 @@ li {
 
 .bookInfoWrapper {
   flex-grow: 2;
+  max-width: 45%;
+}
+
+.bookTitle {
+  word-break: break-word;
 }
 
 .currentChapterWrapper,
