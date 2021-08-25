@@ -2,7 +2,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 const addBook = 'bookStore/books/ADD_BOOK';
 const removeBook = 'bookStore/books/REMOVE_BOOK';
-// initial state just for testing right now
 const initialState = [];
 
 const bookReducer = (state = initialState, action) => {
