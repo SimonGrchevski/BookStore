@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from './components/Header';
-import Book from './components/Book';
+import Library from './components/Library';
 
 const App = () => {
   return(
     <div>
       <Header />
-      <Book />
+      <Library />
     </div>
   );
 }
