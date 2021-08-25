@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <Header />
       <Switch>
-        <Route path='/'>
+        <Route exact path='/'>
           <Library />
         </Route>
         <Route path='/Categories'>
