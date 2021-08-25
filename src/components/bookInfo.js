@@ -9,7 +9,7 @@ const BookInfo = () => {
         <h5 className="bookAuthor">BookAuthor</h5>
       </div>
       <div className="optionsSection">
-        <ul>
+        <ul className ="flex optionsUl">
           <li>Comments</li>
           <li>Remove</li>
           <li>Edit</li>
