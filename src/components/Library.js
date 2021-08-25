@@ -20,7 +20,6 @@ const Library = () => {
     <div className="library">
       <ul className="ulBooks">
         {books}
-        ;
       </ul>
       <AddNewBook />
     </div>

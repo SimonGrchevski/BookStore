@@ -42,13 +42,18 @@ li {
   max-width: 45%;
 }
 
-.bookTitle {
+.bookTitle,
+.currentChapter {
   word-break: break-word;
 }
 
 .currentChapterWrapper,
 .completionWrapper {
   flex-grow: 1;
+}
+
+.completionWrapper {
+  align-items: center;
 }
 
 .completeImageDiv {
@@ -60,6 +65,18 @@ li {
   padding: 2px 0;
 }
 
+.currentChapterWrapper {
+  max-width: 25%;
+}
+
 .optionsUl > li {
   padding-right: 5px;
+}
+
+.progress {
+  background: url(../progressCircle.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
 }
