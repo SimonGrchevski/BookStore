@@ -1,8 +1,8 @@
 *,
 *::after,
 *::before {
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -11,6 +11,7 @@ li {
   text-decoration: none;
   list-style-type: none;
 }
+
 .flex {
   display: flex;
 }
@@ -56,7 +57,7 @@ li {
 
 .currentChapterWrapper > * {
   display: block;
-  padding: 2px 0 ;
+  padding: 2px 0;
 }
 
 .optionsUl > li {
