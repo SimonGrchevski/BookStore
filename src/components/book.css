@@ -27,9 +27,13 @@ li {
 .bookWrapper {
   padding: 10px 20px;
   width: 90%;
-  background-color: red;
+  background-color: #f7f7f7f7;
   margin: 0 auto;
   align-items: center;
+}
+
+.ulBooks > li {
+  margin: 15px 0;
 }
 
 .bookInfoWrapper {
