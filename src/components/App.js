@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Categories from './components/Categories';
-import Header from './components/Header';
-import Library from './components/Library';
+import Categories from './Categories';
+import Header from './Header';
+import Library from './Library';
 
 const App = () => (
   <div>

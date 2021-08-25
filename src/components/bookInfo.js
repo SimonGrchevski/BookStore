@@ -13,8 +13,8 @@ const BookInfo = (props) => {
       <div className="optionsSection">
         <ul className="flex optionsUl">
           <li>Comments</li>
-          <li>Remove</li>
-          <li>Edit</li>
+          <li><button type="button">Remove</button></li>
+          <li><button type="button">Edit</button></li>
         </ul>
       </div>
     </article>
