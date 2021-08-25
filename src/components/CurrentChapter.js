@@ -1,7 +1,8 @@
 import React from 'react';
+import Proptypes from 'prop-types';
 
 const CurrentChapter = (props) => {
-  const {currentChapter} = props
+  const { currentChapter } = props;
   return (
     <article className="currentChapterWrapper">
       <p>CurrentChapter</p>
@@ -9,6 +10,9 @@ const CurrentChapter = (props) => {
       <button type="button" className="updateProgress">UpdateProgress</button>
     </article>
   );
-}
+};
 
+CurrentChapter.propTypes = {
+  currentChapter: Proptypes.string.isRequired,
+};
 export default CurrentChapter;

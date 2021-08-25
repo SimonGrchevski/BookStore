@@ -1,18 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Completion = (props) => {
-  const {completed}= props;
+  const { completed } = props;
   return (
     <article className="completionWrapper flex">
       <div className="completeImageDiv">
-        <img alt="Completion"></img>
+        <img alt="Completion" />
       </div>
       <div>
-        <p className="completed"> {completed} %</p>
+        <p className="completed">
+          {' '}
+          {completed}
+          {' '}
+          %
+        </p>
         <p>completed</p>
       </div>
     </article>
   );
-}
+};
 
+Completion.propTypes = {
+  completed: PropTypes.number.isRequired,
+};
 export default Completion;

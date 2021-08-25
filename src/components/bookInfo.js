@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BookInfo = (props) => {
-  const {title, category} = props;
+  const { title, category } = props;
   return (
     <article className="bookInfoWrapper">
       <div className="bookInfo">
@@ -10,7 +11,7 @@ const BookInfo = (props) => {
         <h5 className="bookAuthor">BookAuthor</h5>
       </div>
       <div className="optionsSection">
-        <ul className ="flex optionsUl">
+        <ul className="flex optionsUl">
           <li>Comments</li>
           <li>Remove</li>
           <li>Edit</li>
@@ -18,6 +19,10 @@ const BookInfo = (props) => {
       </div>
     </article>
   );
-}
+};
 
+BookInfo.propTypes = {
+  title: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+};
 export default BookInfo;
