@@ -6,12 +6,14 @@ import AddNewBook from './AddNewBook';
 const Library = () => {
   const state = useSelector((state) => state);
   const books = state.books.map((e) => (
-    <li key={e.title}>
+    <li key={e.id}>
       <Book
         title={e.title}
+        author={e.author}
         category={e.category}
         completed={e.completed}
         chapter={e.chapter}
+        id={e.id}
       />
     </li>
   ));

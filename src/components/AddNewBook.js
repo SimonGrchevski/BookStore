@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './addNewBook.css';
 import { useDispatch } from 'react-redux';
 import { newBook } from '../redux/books/books';
 
-const AddNewBook = () => {
-  const dispatch = useDispatch();
+const getOptions = () => {
   const options = ['Fantasy', 'Dystopian', 'Philosophy', 'Mystery', 'Thriller',
     'History', 'Action', 'ScienceFiction', 'Economy'];
-  const jsxOptions = options.map((o) => (
+  return options.map((o) => (
     <option key={o}>{o}</option>
   ));
+};
+
+const AddNewBook = () => {
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+
+  const dispatch = useDispatch();
+  const options = getOptions();
 
   return (
     <div className="newBookWrapper">
@@ -20,14 +27,14 @@ const AddNewBook = () => {
         className="flex"
         onSubmit={(e) => {
           e.preventDefault();
-          const title = document.querySelector('.newBookTitile').value;
           const category = document.querySelector('.newBookCategory').value;
-          dispatch(newBook(title, category));
+          dispatch(newBook(title, author, category));
         }}
       >
-        <input type="text" className="newBookTitile" placeholder="Book titile" required />
+        <input type="text" className="newBookTitile" placeholder="Book titile" required onChange={(e) => setTitle(e.target.value)} />
+        <input type="text" className="newBookAuthor" placeholder="Author" required onChange={(e) => setAuthor(e.target.value)} />
         <select className="newBookCategory" required>
-          {jsxOptions}
+          {options}
         </select>
 
         <button type="submit" className="submitBtn">Add book</button>
