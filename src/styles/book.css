@@ -1,7 +1,6 @@
 .bookWrapper {
   padding: 10px 20px;
   width: 90%;
-  background-color: #f7f7f7f7;
   margin: 0 auto;
   align-items: center;
   background-color :#fff;
@@ -105,5 +104,14 @@
   padding: 3px 15px;
   border-radius: 2px;
   border: transparent;
+}
 
+.submitBtn {
+  background-color: #0290ff;
+  color: #fff;
+  border: transparent;
+  padding: 10px;
+  border-radius: 2px;
+  font-size: 10px;
+  text-transform: uppercase;
 }

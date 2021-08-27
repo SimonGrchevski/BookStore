@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
 
 #root {
-  background-color: rgba(128, 128, 128, 0.59);
+  background-color: #fafafa;
   min-height: 100vh;
 }
 
