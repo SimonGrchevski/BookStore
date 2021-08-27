@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './addNewBook.css';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { newBook } from '../redux/books/books';
 
 const getOptions = () => {
@@ -11,11 +12,19 @@ const getOptions = () => {
   ));
 };
 
-const fetchApiLib = () => async function () {
-  console.log('Called async');
-  const j = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AblqEJl1fDfXqpmG7PLp/books');
-  const res = await j.json();
-  console.log(res);
+const newBookMiddleWare = (title, author, category, id) => async (dispatch) => {
+  console.log('Called the newBook MiddleWare');
+  await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AHBPUHELlRzJeWxjyULG/books', {
+    method: 'POST',
+    headers: new Headers({ 'Content-type': 'application/json; charset=UTF-8' }),
+    body: JSON.stringify({
+      item_id: id,
+      title,
+      category,
+      author,
+    }),
+  });
+  dispatch(newBook(title, author, category, id));
 };
 
 const AddNewBook = () => {
@@ -35,7 +44,7 @@ const AddNewBook = () => {
         onSubmit={(e) => {
           e.preventDefault();
           const category = document.querySelector('.newBookCategory').value;
-          dispatch(newBook(title, author, category));
+          dispatch(newBookMiddleWare(title, author, category, uuidv4()));
         }}
       >
         <input type="text" className="newBookTitile" placeholder="Book titile" required onChange={(e) => setTitle(e.target.value)} />
@@ -45,7 +54,6 @@ const AddNewBook = () => {
         </select>
 
         <button type="submit" className="submitBtn">Add book</button>
-        <button type="button" className="submitBtn" onClick={() => { dispatch(fetchApiLib()); }}>SHIT BUTTON</button>
       </form>
     </div>
   );

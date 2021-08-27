@@ -1,18 +1,19 @@
-import { v4 as uuidv4 } from 'uuid';
-
 const addBook = 'bookStore/books/ADD_BOOK';
 const removeBook = 'bookStore/books/REMOVE_BOOK';
 const update = 'bookStore/books/UPDATE_LIBRARY';
 const initialState = {};
 
 const bookReducer = (state = initialState, action) => {
+  let newState = {};
   switch (action.type) {
     case addBook:
-      return state.concat(action.payload);
+      newState = JSON.parse(JSON.stringify(state));
+      newState[action.payload.id] = [action.payload];
+      return newState;
     case removeBook:
       return state.filter((e) => e.id !== action.payload.id);
     case update:
-      return { ...action.payload }; // Should update the API state.
+      return action.payload; // Should update the API state.
     default:
       return state;
   }
@@ -26,7 +27,7 @@ export function updateLibrary(apiState) {
   };
 }
 
-export function newBook(title, author, category) {
+export function newBook(title, author, category, id) {
   return {
     type: addBook,
     payload: {
@@ -35,7 +36,7 @@ export function newBook(title, author, category) {
       category,
       completed: 0,
       chapter: 'Introduction',
-      id: uuidv4(),
+      id,
     },
   };
 }
