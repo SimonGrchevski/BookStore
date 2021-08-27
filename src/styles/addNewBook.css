@@ -3,13 +3,14 @@
   width: 90%;
   margin: 0 auto;
 }
+
 .new-book-wrapper h2 {
-  color: #888888;
+  color: #888;
   padding-bottom: 15px;
 }
 
-.newBookTitle, 
-.newBookAuthor, 
+.newBookTitle,
+.newBookAuthor,
 .newBookCategory {
   background-color: #fff;
   border: 1px solid #e8e8e8;
