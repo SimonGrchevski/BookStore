@@ -5,7 +5,7 @@ const generateBooks = () => {
   const state = useSelector((state) => state);
   const values = Object.values(state.books);
   const ids = Object.keys(state.books);
-  let idCounter = -1;
+  let idCounter = -1; // for the 0 start at values.map
 
   const books = values.map((e) => {
     idCounter += 1;
