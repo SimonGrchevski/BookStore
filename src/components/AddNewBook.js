@@ -1,22 +1,15 @@
 import React, { useState } from 'react';
-import './addNewBook.css';
+import '../styles/addNewBook.css';
 import { useDispatch } from 'react-redux';
-import { newBook } from '../redux/books/books';
-
-const getOptions = () => {
-  const options = ['Fantasy', 'Dystopian', 'Philosophy', 'Mystery', 'Thriller',
-    'History', 'Action', 'ScienceFiction', 'Economy'];
-  return options.map((o) => (
-    <option key={o}>{o}</option>
-  ));
-};
+import { v4 as uuidv4 } from 'uuid';
+import { newBookMiddleWare } from '../redux/middlewares';
+import { getOptions } from './utility';
 
 const AddNewBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
   const dispatch = useDispatch();
-  const options = getOptions();
 
   return (
     <div className="newBookWrapper">
@@ -28,13 +21,13 @@ const AddNewBook = () => {
         onSubmit={(e) => {
           e.preventDefault();
           const category = document.querySelector('.newBookCategory').value;
-          dispatch(newBook(title, author, category));
+          dispatch(newBookMiddleWare(title, author, category, uuidv4()));
         }}
       >
         <input type="text" className="newBookTitile" placeholder="Book titile" required onChange={(e) => setTitle(e.target.value)} />
         <input type="text" className="newBookAuthor" placeholder="Author" required onChange={(e) => setAuthor(e.target.value)} />
         <select className="newBookCategory" required>
-          {options}
+          {getOptions()}
         </select>
 
         <button type="submit" className="submitBtn">Add book</button>

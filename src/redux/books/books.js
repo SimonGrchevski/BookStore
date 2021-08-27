@@ -1,44 +1,49 @@
-import { v4 as uuidv4 } from 'uuid';
-
 const addBook = 'bookStore/books/ADD_BOOK';
 const removeBook = 'bookStore/books/REMOVE_BOOK';
-const initialState = [];
+const update = 'bookStore/books/UPDATE_LIBRARY';
+const initialState = {};
 
 const bookReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case addBook:
-      return state.concat(action.payload);
-    case removeBook:
-      return state.filter((e) => e.id !== action.payload.id);
-    default:
-      return state;
+  if (action.type === addBook) {
+    const newState = JSON.parse(JSON.stringify(state));
+    newState[action.payload.id] = [action.payload];
+    return newState;
+  } if (action.type === removeBook) {
+    const { [action.payload.id]: r, ...newState } = state;
+    return newState;
+  } if (action.type === update) {
+    return action.payload; // Should update the API state.
   }
+  return state;
 };
 
-export function newBook(title, author, category) {
-  return (dispatch) => {
-    dispatch({
-      type: addBook,
-      payload: {
-        title,
-        author,
-        category,
-        completed: 0,
-        chapter: 'Introduction',
-        id: uuidv4(),
-      },
-    });
+export function updateLibrary(apiState) {
+  return {
+    type: update,
+    payload: apiState,
+  };
+}
+
+export function newBook(title, author, category, id) {
+  return {
+    type: addBook,
+    payload: {
+      title,
+      author,
+      category,
+      completed: 0,
+      chapter: 'Introduction',
+      id,
+    },
   };
 }
 
 export function eraseBook(id) {
-  return (dispatch) => {
-    dispatch({
-      type: removeBook,
-      payload: {
-        id,
-      },
-    });
+  return {
+    type: removeBook,
+    payload: {
+      id,
+    },
   };
 }
 
