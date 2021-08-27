@@ -29,7 +29,7 @@ const generateBooks = () => {
           category={e[0].category}
           completed={32}
           chapter="chapter"
-          id="id"
+          id={ids[idCounter]}
           key={ids[idCounter]}
         />
       </li>

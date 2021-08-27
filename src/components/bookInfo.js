@@ -3,6 +3,16 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { eraseBook } from '../redux/books/books';
 
+const eraseBookMiddleWare = (id) => async (dispatch) => {
+  await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AHBPUHELlRzJeWxjyULG/books/${id}`, {
+    method: 'DELETE',
+    body: JSON.stringify({
+      item_id: id,
+    }),
+  });
+  dispatch(eraseBook(id));
+};
+
 const BookInfo = (props) => {
   const dispatch = useDispatch();
   const {
@@ -18,7 +28,7 @@ const BookInfo = (props) => {
       <div className="optionsSection">
         <ul className="flex optionsUl">
           <li>Comments</li>
-          <li><button type="button" id={id} onClick={(e) => dispatch(eraseBook(e.target.id))}>Remove</button></li>
+          <li><button type="button" id={id} onClick={(e) => dispatch(eraseBookMiddleWare(e.target.id))}>Remove</button></li>
           <li><button type="button">Edit</button></li>
         </ul>
       </div>

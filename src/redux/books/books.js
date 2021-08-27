@@ -4,19 +4,17 @@ const update = 'bookStore/books/UPDATE_LIBRARY';
 const initialState = {};
 
 const bookReducer = (state = initialState, action) => {
-  let newState = {};
-  switch (action.type) {
-    case addBook:
-      newState = JSON.parse(JSON.stringify(state));
-      newState[action.payload.id] = [action.payload];
-      return newState;
-    case removeBook:
-      return state.filter((e) => e.id !== action.payload.id);
-    case update:
-      return action.payload; // Should update the API state.
-    default:
-      return state;
+  if (action.type === addBook) {
+    const newState = JSON.parse(JSON.stringify(state));
+    newState[action.payload.id] = [action.payload];
+    return newState;
+  } if (action.type === removeBook) {
+    const { [action.payload.id]: r, ...newState } = state;
+    return newState;
+  } if (action.type === update) {
+    return action.payload; // Should update the API state.
   }
+  return state;
 };
 
 export function updateLibrary(apiState) {
