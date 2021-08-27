@@ -1,17 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { eraseBook } from '../redux/books/books';
-
-const eraseBookMiddleWare = (id) => async (dispatch) => {
-  await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AHBPUHELlRzJeWxjyULG/books/${id}`, {
-    method: 'DELETE',
-    body: JSON.stringify({
-      item_id: id,
-    }),
-  });
-  dispatch(eraseBook(id));
-};
+import { eraseBookMiddleWare } from '../redux/middlewares';
 
 const BookInfo = (props) => {
   const dispatch = useDispatch();

@@ -18,7 +18,6 @@ const bookReducer = (state = initialState, action) => {
 };
 
 export function updateLibrary(apiState) {
-  console.log('Called the action creator');
   return {
     type: update,
     payload: apiState,
