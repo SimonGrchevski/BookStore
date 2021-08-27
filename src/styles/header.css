@@ -8,7 +8,7 @@ header {
 
 .header-section
 {
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
   width: 90%;
   margin: 0 auto;
@@ -19,6 +19,18 @@ header {
   font-size: 30px;
 }
 
+.nav-bar {
+  flex-grow: 4;
+}
+
 .nav-bar > li {
   padding: 0 10px;
+}
+
+.login-icon {
+  width: 25px;
+  height: 25px;
+  background: url(../log.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }

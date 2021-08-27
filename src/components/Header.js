@@ -10,6 +10,7 @@ const Header = () => (
         <li><Link to="/">Books</Link></li>
         <li><Link to="/Categories">Categories</Link></li>
       </ul>
+      <section className="login-icon" />
     </section>
   </header>
 );

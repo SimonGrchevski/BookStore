@@ -75,7 +75,14 @@
 }
 
 .options-ul > li {
-  padding-right: 5px;
+  padding-right: 10px;
+}
+
+.btn {
+  border: none;
+  padding: 0;
+  outline: none;
+  background-color: #fff;
 }
 
 .completed {

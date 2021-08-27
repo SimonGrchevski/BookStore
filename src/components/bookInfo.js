@@ -18,8 +18,8 @@ const BookInfo = (props) => {
       <div className="options-section">
         <ul className="flex options-ul">
           <li>Comments</li>
-          <li><button type="button" id={id} onClick={(e) => dispatch(eraseBookMiddleWare(e.target.id))}>Remove</button></li>
-          <li><button type="button">Edit</button></li>
+          <li><button type="button" className="btn" id={id} onClick={(e) => dispatch(eraseBookMiddleWare(e.target.id))}>Remove</button></li>
+          <li><button type="button" className="btn">Edit</button></li>
         </ul>
       </div>
     </article>

@@ -13,15 +13,16 @@
 .newBookCategory {
   background-color: #fff;
   border: 1px solid #e8e8e8;
+  height: 30px;
 }
 
 form {
   gap: 10px;
 }
 
-.newBookTitle {
+.newBookTitle,
+.newBookAuthor {
   flex-grow: 2;
-  height: 30px;
 }
 
 .newBookCategory,
