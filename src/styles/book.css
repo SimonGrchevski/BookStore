@@ -28,8 +28,16 @@
 }
 
 .book-title,
-.currentChapter {
+.current-chapter {
   word-break: break-word;
+}
+
+.current-chapter {
+  color: gray;
+  font-weight: 50;
+  font-size: 15px;
+  text-transform: capitalize;
+  margin-bottom: 15px;
 }
 
 .book-author,
@@ -41,7 +49,7 @@
   opacity: 0.8;
 }
 
-.currentChapterWrapper,
+.current-chapter-wrapper,
 .completion-wrapper {
   flex-grow: 1;
 }
@@ -54,12 +62,16 @@
   padding: 0 10px;
 }
 
-.currentChapterWrapper > * {
+.current-chapter-wrapper > * {
   display: block;
   padding: 2px 0;
 }
 
-.currentChapterWrapper {
+.current-chapter-wrapper p {
+  text-transform: uppercase;
+}
+
+.current-chapter-wrapper {
   max-width: 25%;
 }
 
@@ -72,7 +84,8 @@
   font-size: 30px;
 }
 
-.completed-p {
+.completed-p,
+.current-chapter-wrapper p {
   color: gray;
   font-size: 12px;
   opacity: 0.6;
@@ -84,4 +97,13 @@
   background-repeat: no-repeat;
   width: 100px;
   height: 100px;
+}
+
+.update-progress {
+  background-color: #0290ff;
+  color: rgba(255, 255, 255, 0.535);
+  padding: 3px 15px;
+  border-radius: 2px;
+  border: transparent;
+
 }

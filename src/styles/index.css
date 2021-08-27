@@ -40,6 +40,8 @@ a:visited {
 
 .book-title,
 .book-author,
-.options-ul > li {
+.options-ul > li,
+.current-chapter,
+.update-progress {
   font-family: 'Roboto Slab', serif;
 }
