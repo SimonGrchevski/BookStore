@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import BookInfo from './bookInfo';
 import Completion from './Completion';
 import CurrentChapter from './CurrentChapter';
-import './book.css';
+import '../styles/book.css';
 
 const Book = (props) => {
   const {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './addNewBook.css';
+import '../styles/addNewBook.css';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { newBookMiddleWare } from '../redux/middlewares';
