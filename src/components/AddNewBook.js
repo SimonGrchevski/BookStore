@@ -19,8 +19,9 @@ const AddNewBook = () => {
       <form
         className="flex"
         onSubmit={(e) => {
-          e.preventDefault();
           const category = document.querySelector('.newBookCategory').value;
+          e.preventDefault();
+          e.target.reset();
           dispatch(newBookMiddleWare(title, author, category, uuidv4()));
         }}
       >

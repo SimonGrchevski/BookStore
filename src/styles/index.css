@@ -1,6 +1,15 @@
 /*
     Global styles only
 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,100;1,600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+#root {
+  background-color: rgba(128, 128, 128, 0.59);
+  min-height: 100vh;
+}
+
 *,
 *::after,
 *::before {
@@ -15,11 +24,22 @@ li {
   list-style-type: none;
 }
 
+a:visited {
+  color: inherit;
+}
+
 .flex {
   display: flex;
 }
 
-#root {
-  background-color: rgba(128, 128, 128, 0.59);
-  height: 100vh;
+.book-category,
+.completed,
+.completed-p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.book-title,
+.book-author,
+.options-ul > li {
+  font-family: 'Roboto Slab', serif;
 }

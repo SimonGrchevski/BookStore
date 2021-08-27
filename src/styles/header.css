@@ -1,6 +1,22 @@
 header {
+  background-color: #fff;
+  height: 70px;
+  align-items: center;
+  color: #121212;
+  border: 1px solid #e8e8e8;
+}
+
+.header-section
+{
   align-items: baseline;
   gap: 10px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#logo {
+  color: #0290ff;
+  font-size: 30px;
 }
 
 .nav-bar > li {
