@@ -7,8 +7,9 @@ import './book.css';
 
 const Book = (props) => {
   const {
-    title, author, category, completed, chapter,
-    id,
+    title, author,
+    category, completed,
+    chapter, id,
   } = props;
   return (
     <section className="bookWrapper flex">

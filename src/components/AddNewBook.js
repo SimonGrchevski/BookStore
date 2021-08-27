@@ -5,14 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { newBookMiddleWare } from '../redux/middlewares';
 import { getOptions } from './utility';
 
-// const getOptions = () => {
-//   const options = ['Fantasy', 'Dystopian', 'Philosophy', 'Mystery', 'Thriller',
-//     'History', 'Action', 'ScienceFiction', 'Economy'];
-//   return options.map((o) => (
-//     <option key={o}>{o}</option>
-//   ));
-// };
-
 const AddNewBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
