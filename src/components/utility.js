@@ -3,7 +3,7 @@ import Book from './Book';
 
 const generateBooks = () => {
   const state = useSelector((state) => state);
-  const books = Object.entries(state.books).map(([k, v]) => (
+  return Object.entries(state.books).map(([k, v]) => (
     <li key={k}>
       <Book
         title={v[0].title}
@@ -16,7 +16,6 @@ const generateBooks = () => {
       />
     </li>
   ));
-  return books;
 };
 
 export const getOptions = () => {
