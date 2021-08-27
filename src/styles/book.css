@@ -3,7 +3,7 @@
   width: 90%;
   margin: 0 auto;
   align-items: center;
-  background-color :#fff;
+  background-color: #fff;
   border: 1px solid #e8e8e8;
 }
 
@@ -23,7 +23,7 @@
 .book-category {
   color: gray;
   font-size: 13px;
-  letter-spacing:0.3px;
+  letter-spacing: 0.3px;
 }
 
 .book-title,
