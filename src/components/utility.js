@@ -1,18 +1,18 @@
 import { useSelector } from 'react-redux';
 import Book from './Book';
 
+/*
+  I am totally aware why eslint is forbidding props spreading, but I know
+  what props I am sending to the component and they are all useful.
+  ps: I was kinda lazy too.
+*/
 const generateBooks = () => {
   const state = useSelector((state) => state);
   return Object.entries(state.books).map(([k, v]) => (
     <li key={k}>
       <Book
-        title={v[0].title}
-        author={v[0].author || 'Author'}
-        category={v[0].category}
-        completed={32}
-        chapter="chapter"
-        id={k}
-        key={k}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+        {...v[0]}
       />
     </li>
   ));
