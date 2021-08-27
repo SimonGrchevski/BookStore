@@ -11,6 +11,13 @@ const getOptions = () => {
   ));
 };
 
+const fetchApiLib = () => async function () {
+  console.log('Called async');
+  const j = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/AblqEJl1fDfXqpmG7PLp/books');
+  const res = await j.json();
+  console.log(res);
+};
+
 const AddNewBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
@@ -38,6 +45,7 @@ const AddNewBook = () => {
         </select>
 
         <button type="submit" className="submitBtn">Add book</button>
+        <button type="button" className="submitBtn" onClick={() => { dispatch(fetchApiLib()); }}>SHIT BUTTON</button>
       </form>
     </div>
   );
