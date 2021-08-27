@@ -3,7 +3,7 @@ import { updateLibrary, newBook, eraseBook } from './books/books';
 const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
 const key = 'AHBPUHELlRzJeWxjyULG';
 
-export const updateMiddleware = () => async function (dispatch) {
+export const updateMiddleware = () => async (dispatch) => {
   const result = await fetch(`${url}/apps/${key}/books`);
   const res = await result.json();
   dispatch(updateLibrary(res));
