@@ -11,7 +11,7 @@ const App = () => (
       <Route exact path="/">
         <Library />
       </Route>
-      <Route path="/Categories">
+      <Route exact path="/Categories">
         <Categories />
       </Route>
     </Switch>
