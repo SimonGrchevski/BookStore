@@ -1,49 +1,101 @@
 .bookWrapper {
   padding: 10px 20px;
   width: 90%;
-  background-color: #f7f7f7f7;
   margin: 0 auto;
   align-items: center;
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
 }
 
 .ulBooks > li {
   margin: 15px 0;
 }
 
-.bookInfoWrapper {
+.book-info-wrapper {
   flex-grow: 2;
   max-width: 45%;
 }
 
-.bookTitle,
-.currentChapter {
+.book-info {
+  padding-bottom: 15px;
+}
+
+.book-category {
+  color: gray;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+.book-title,
+.current-chapter {
   word-break: break-word;
 }
 
-.currentChapterWrapper,
-.completionWrapper {
+.current-chapter {
+  color: gray;
+  font-weight: 50;
+  font-size: 15px;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+}
+
+.book-author,
+.options-ul,
+.options-ul > li > button {
+  color: #4386bf;
+  font-weight: 100;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.current-chapter-wrapper,
+.completion-wrapper {
   flex-grow: 1;
 }
 
-.completionWrapper {
+.completion-wrapper {
   align-items: center;
 }
 
-.completeImageDiv {
+.background-wrapper {
   padding: 0 10px;
 }
 
-.currentChapterWrapper > * {
+.current-chapter-wrapper > * {
   display: block;
   padding: 2px 0;
 }
 
-.currentChapterWrapper {
+.current-chapter-wrapper p {
+  text-transform: uppercase;
+}
+
+.current-chapter-wrapper {
   max-width: 25%;
 }
 
-.optionsUl > li {
-  padding-right: 5px;
+.options-ul > li {
+  padding-right: 10px;
+}
+
+.btn {
+  border: none;
+  padding: 0;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.completed {
+  color: #121212;
+  font-size: 30px;
+}
+
+.completed-p,
+.current-chapter-wrapper p {
+  color: gray;
+  font-size: 12px;
+  opacity: 0.6;
 }
 
 .progress {
@@ -52,4 +104,22 @@
   background-repeat: no-repeat;
   width: 100px;
   height: 100px;
+}
+
+.update-progress {
+  background-color: #0290ff;
+  color: rgba(255, 255, 255, 0.535);
+  padding: 3px 15px;
+  border-radius: 2px;
+  border: transparent;
+}
+
+.submitBtn {
+  background-color: #0290ff;
+  color: #fff;
+  border: transparent;
+  padding: 10px;
+  border-radius: 2px;
+  font-size: 10px;
+  text-transform: uppercase;
 }

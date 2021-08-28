@@ -12,19 +12,20 @@ const AddNewBook = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="newBookWrapper">
+    <div className="new-book-wrapper">
       <h2>
         Add new Book
       </h2>
       <form
         className="flex"
         onSubmit={(e) => {
-          e.preventDefault();
           const category = document.querySelector('.newBookCategory').value;
+          e.preventDefault();
+          e.target.reset();
           dispatch(newBookMiddleWare(title, author, category, uuidv4()));
         }}
       >
-        <input type="text" className="newBookTitile" placeholder="Book titile" required onChange={(e) => setTitle(e.target.value)} />
+        <input type="text" className="newBookTitle" placeholder="Book titile" required onChange={(e) => setTitle(e.target.value)} />
         <input type="text" className="newBookAuthor" placeholder="Author" required onChange={(e) => setAuthor(e.target.value)} />
         <select className="newBookCategory" required>
           {getOptions()}

@@ -4,10 +4,10 @@ import Proptypes from 'prop-types';
 const CurrentChapter = (props) => {
   const { chapter } = props;
   return (
-    <article className="currentChapterWrapper">
-      <p>CurrentChapter</p>
-      <span className="currentChapter">{chapter}</span>
-      <button type="button" className="updateProgress">UpdateProgress</button>
+    <article className="current-chapter-wrapper">
+      <p>Current Chapter</p>
+      <span className="current-chapter">{chapter}</span>
+      <button type="button" className="update-progress">UpdateProgress</button>
     </article>
   );
 };

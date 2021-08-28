@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 const Completion = (props) => {
   const { completed } = props;
   return (
-    <article className="completionWrapper flex">
-      <div className="completeImageDiv">
+    <article className="completion-wrapper flex">
+      <div className="background-wrapper">
         <div className="progress" />
       </div>
       <div>
@@ -15,7 +15,7 @@ const Completion = (props) => {
           {' '}
           %
         </p>
-        <p>completed</p>
+        <p className="completed-p">completed</p>
       </div>
     </article>
   );

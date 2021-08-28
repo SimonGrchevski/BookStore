@@ -1,8 +1,35 @@
 header {
-  align-items: baseline;
+  background-color: #fff;
+  height: 70px;
+  align-items: center;
+  color: #121212;
+  border: 1px solid #e8e8e8;
+}
+
+.header-section {
+  align-items: center;
   gap: 10px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#logo {
+  color: #0290ff;
+  font-size: 30px;
+}
+
+.nav-bar {
+  flex-grow: 4;
 }
 
 .nav-bar > li {
   padding: 0 10px;
+}
+
+.login-icon {
+  width: 25px;
+  height: 25px;
+  background: url(../log.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
